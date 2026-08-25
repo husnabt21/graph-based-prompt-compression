@@ -1,0 +1,5 @@
+{
+    "id": "sample_001",
+    "prompt": "You are an academic research assistant. \nAnalyze the following research topic about prompt compression for large language models.\nExplain the major challenges associated with reducing prompt length while preserving semantic information, task instructions, contextual relationships, and downstream response quality.\nCompare token-level compression with semantic or graph-based compression approaches.\nThe analysis should clearly identify the research gap, explain why semantic relationships between information units may be important, and propose suitable evaluation metrics including token reduction,\ncompression ratio, semantic similarity, instruction fidelity, response relevance, response completeness, latency, and estimated inference cost. Present the answer in a structured academic format using clear headings and concise explanations.",
+    "token_count": 126
+}

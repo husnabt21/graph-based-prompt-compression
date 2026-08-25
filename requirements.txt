@@ -1,0 +1,12 @@
+spacy
+nltk
+transformers
+sentence-transformers
+networkx
+streamlit
+tiktoken
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
