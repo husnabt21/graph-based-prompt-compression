@@ -1,0 +1,11 @@
+prompt_id,category,original_units,retained_units,graph_edges,original_tokens,compressed_tokens,tokens_reduced,token_reduction_percent,compression_ratio,semantic_similarity,instruction_fidelity_percent
+P01,Academic,3,2,1,45,30,15,33.33,1.5,0.9519,66.67
+P02,Summarization,3,2,1,39,29,10,25.64,1.3448,0.9728,66.67
+P03,Technical,3,2,2,43,27,16,37.21,1.5926,0.9293,66.67
+P04,Programming,3,2,0,38,28,10,26.32,1.3571,0.9793,66.67
+P05,Comparison,3,2,1,38,28,10,26.32,1.3571,0.5531,66.67
+P06,Research,3,2,2,39,19,20,51.28,2.0526,0.9236,66.67
+P07,Explanation,3,2,0,45,32,13,28.89,1.4062,0.9481,66.67
+P08,Technical,3,2,0,38,24,14,36.84,1.5833,0.911,66.67
+P09,Academic,3,2,1,40,33,7,17.5,1.2121,0.9668,66.67
+P10,AI,3,2,0,40,28,12,30.0,1.4286,0.8511,66.67

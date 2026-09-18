@@ -2,31 +2,31 @@
     {
         "id": "unit_001",
         "text": "You are an academic research assistant.",
-        "type": "context"
+        "text_type": "role"
     },
     {
         "id": "unit_002",
         "text": "Analyze the following research topic about prompt compression for large language models.",
-        "type": "instruction"
+        "text_type": "instruction"
     },
     {
         "id": "unit_003",
         "text": "Explain the major challenges associated with reducing prompt length while preserving semantic information, task instructions, contextual relationships, and downstream response quality.",
-        "type": "instruction"
+        "text_type": "instruction"
     },
     {
         "id": "unit_004",
         "text": "Compare token-level compression with semantic or graph-based compression approaches.",
-        "type": "instruction"
+        "text_type": "instruction"
     },
     {
         "id": "unit_005",
         "text": "The analysis should clearly identify the research gap, explain why semantic relationships between information units may be important, and propose suitable evaluation metrics including token reduction, compression ratio, semantic similarity, instruction fidelity, response relevance, response completeness, latency, and estimated inference cost.",
-        "type": "instruction"
+        "text_type": "instruction"
     },
     {
         "id": "unit_006",
         "text": "Present the answer in a structured academic format using clear headings and concise explanations.",
-        "type": "instruction"
+        "text_type": "instruction"
     }
 ]

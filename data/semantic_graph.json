@@ -1,0 +1,59 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "text": "You are an academic research assistant.",
+      "text_type": "role",
+      "id": 0
+    },
+    {
+      "text": "Analyze the following research topic about prompt compression for large language models.",
+      "text_type": "instruction",
+      "id": 1
+    },
+    {
+      "text": "Explain the major challenges associated with reducing prompt length while preserving semantic information, task instructions, contextual relationships, and downstream response quality.",
+      "text_type": "instruction",
+      "id": 2
+    },
+    {
+      "text": "Compare token-level compression with semantic or graph-based compression approaches.",
+      "text_type": "instruction",
+      "id": 3
+    },
+    {
+      "text": "The analysis should clearly identify the research gap, explain why semantic relationships between information units may be important, and propose suitable evaluation metrics including token reduction, compression ratio, semantic similarity, instruction fidelity, response relevance, response completeness, latency, and estimated inference cost.",
+      "text_type": "instruction",
+      "id": 4
+    },
+    {
+      "text": "Present the answer in a structured academic format using clear headings and concise explanations.",
+      "text_type": "instruction",
+      "id": 5
+    }
+  ],
+  "links": [
+    {
+      "weight": 0.5785161852836609,
+      "source": 1,
+      "target": 2
+    },
+    {
+      "weight": 0.5438299179077148,
+      "source": 1,
+      "target": 3
+    },
+    {
+      "weight": 0.5611247420310974,
+      "source": 2,
+      "target": 4
+    },
+    {
+      "weight": 0.5423389077186584,
+      "source": 3,
+      "target": 4
+    }
+  ]
+}

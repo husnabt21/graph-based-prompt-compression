@@ -2,6 +2,7 @@ import re
 import json
 from pathlib import Path
 
+
 def clean_text(text):
     """
     Basic text cleaning.
@@ -10,6 +11,7 @@ def clean_text(text):
     text = re.sub(r"\s+", " ", text)
 
     return text
+
 
 def segment_sentences(text):
     """
@@ -26,10 +28,64 @@ def segment_sentences(text):
 
 def classify_unit(text):
     """
-    Basic rule-based classification of an information unit.
+    Rule-based classification of an information unit.
+
+    Categories:
+    - role
+    - constraint
+    - instruction
+    - context
     """
 
-    text_lower = text.lower()
+    text_lower = text.lower().strip()
+
+    # -----------------------------------------
+    # ROLE / PERSONA
+    # -----------------------------------------
+
+    role_patterns = [
+        "you are",
+        "act as",
+        "assume the role",
+        "your role is"
+    ]
+
+    if any(
+        pattern in text_lower
+        for pattern in role_patterns
+    ):
+        return "role"
+
+    # -----------------------------------------
+    # CONSTRAINT
+    # -----------------------------------------
+
+    constraint_patterns = [
+        "must",
+        "required",
+        "do not",
+        "don't",
+        "avoid",
+        "at least",
+        "at most",
+        "maximum",
+        "minimum",
+        "exactly",
+        "format the answer",
+        "format the response",
+        "use the following format",
+        "respond in"
+    ]
+
+    if any(
+        pattern in text_lower
+        for pattern in constraint_patterns
+    ):
+        return "constraint"
+
+    # -----------------------------------------
+    # INSTRUCTION
+    # -----------------------------------------
 
     instruction_words = [
         "analyze",
@@ -41,28 +97,26 @@ def classify_unit(text):
         "summarize",
         "discuss",
         "provide",
-        "present"
+        "present",
+        "write",
+        "generate",
+        "answer",
+        "develop",
+        "propose"
     ]
 
-    constraint_words = [
-        "must",
-        "should",
-        "required",
-        "only",
-        "at least",
-        "maximum",
-        "minimum",
-        "do not",
-        "using"
-    ]
-
-    if any(word in text_lower for word in instruction_words):
+    if any(
+        word in text_lower
+        for word in instruction_words
+    ):
         return "instruction"
 
-    if any(word in text_lower for word in constraint_words):
-        return "constraint"
+    # -----------------------------------------
+    # CONTEXT
+    # -----------------------------------------
 
     return "context"
+
 
 def create_information_units(text):
     """
@@ -70,57 +124,108 @@ def create_information_units(text):
     """
 
     cleaned_text = clean_text(text)
-    sentences = segment_sentences(cleaned_text)
+
+    sentences = segment_sentences(
+        cleaned_text
+    )
 
     units = []
 
-    for index, sentence in enumerate(sentences, start=1):
+    for index, sentence in enumerate(
+        sentences,
+        start=1
+    ):
 
         unit = {
             "id": f"unit_{index:03d}",
             "text": sentence,
-            "type": classify_unit(sentence)
+            "text_type": classify_unit(sentence)
         }
 
         units.append(unit)
 
     return units
 
-def save_information_units(units, output_path):
+
+def save_information_units(
+    units,
+    output_path
+):
     """
     Save information units to a JSON file.
     """
 
     Path(output_path).write_text(
-        json.dumps(units, indent=4, ensure_ascii=False),
+        json.dumps(
+            units,
+            indent=4,
+            ensure_ascii=False
+        ),
         encoding="utf-8"
     )
 
+
 if __name__ == "__main__":
 
-    input_path = Path("data/prompts/sample_prompt.txt")
-    output_path = Path("data/preprocessed_prompts.json")
+    input_path = Path(
+        "data/prompts/sample_prompt.txt"
+    )
 
-    # Load the original prompt
-    prompt = input_path.read_text(encoding="utf-8")
+    output_path = Path(
+        "data/preprocessed_prompts.json"
+    )
 
-    # Preprocess the prompt and create information units
-    units = create_information_units(prompt)
+    # -----------------------------------------
+    # Load original prompt
+    # -----------------------------------------
 
-    # Save the processed information units
-    save_information_units(units, output_path)
+    prompt = input_path.read_text(
+        encoding="utf-8"
+    )
 
+    # -----------------------------------------
+    # Preprocess prompt
+    # -----------------------------------------
+
+    units = create_information_units(
+        prompt
+    )
+
+    # -----------------------------------------
+    # Save information units
+    # -----------------------------------------
+
+    save_information_units(
+        units,
+        output_path
+    )
+
+    # -----------------------------------------
     # Display results
-    print("Prompt preprocessing completed successfully.")
-    print(f"Input file: {input_path}")
-    print(f"Output file: {output_path}")
-    print(f"Extracted information units: {len(units)}")
+    # -----------------------------------------
+
+    print(
+        "Prompt preprocessing completed successfully."
+    )
+
+    print(
+        f"Input file: {input_path}"
+    )
+
+    print(
+        f"Output file: {output_path}"
+    )
+
+    print(
+        f"Extracted information units: {len(units)}"
+    )
 
     print("\nInformation Units:")
 
     for unit in units:
+
         print(
             f"{unit['id']} | "
-            f"{unit['type']} | "
+            f"{unit['text_type']} | "
             f"{unit['text']}"
         )

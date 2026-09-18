@@ -1,0 +1,52 @@
+[
+    {
+        "id": "P01",
+        "category": "Academic",
+        "prompt": "Analyze the role of artificial intelligence in modern education. Explain its major benefits, challenges, ethical concerns, and possible future applications. Compare traditional teaching methods with AI-assisted learning and present the discussion in a structured academic format."
+    },
+    {
+        "id": "P02",
+        "category": "Summarization",
+        "prompt": "Summarize the importance of cybersecurity in modern organizations. Explain common security threats, the importance of employee awareness, and the role of security policies. Present the summary using clear headings and concise explanations."
+    },
+    {
+        "id": "P03",
+        "category": "Technical",
+        "prompt": "Explain how a relational database management system works. Describe tables, primary keys, foreign keys, relationships, normalization, and SQL queries. Compare relational databases with NoSQL databases and identify situations where each approach is useful."
+    },
+    {
+        "id": "P04",
+        "category": "Programming",
+        "prompt": "Explain the difference between supervised and unsupervised machine learning. Describe common algorithms, training requirements, advantages, limitations, and practical applications. Provide examples and organize the answer with clear headings."
+    },
+    {
+        "id": "P05",
+        "category": "Comparison",
+        "prompt": "Compare cloud computing with traditional on-premise computing. Discuss cost, scalability, security, maintenance, performance, and accessibility. Explain the advantages and limitations of both approaches and identify suitable use cases."
+    },
+    {
+        "id": "P06",
+        "category": "Research",
+        "prompt": "Discuss the major challenges in natural language processing. Explain ambiguity, context understanding, multilingual processing, data requirements, computational cost, and evaluation difficulties. Identify important research directions for improving NLP systems."
+    },
+    {
+        "id": "P07",
+        "category": "Explanation",
+        "prompt": "Explain the Internet of Things and its role in smart cities. Describe sensors, connectivity, data processing, applications, benefits, security concerns, and privacy challenges. Present the answer in a structured and easy-to-understand format."
+    },
+    {
+        "id": "P08",
+        "category": "Technical",
+        "prompt": "Explain the software development life cycle. Describe requirements analysis, system design, implementation, testing, deployment, and maintenance. Compare waterfall and agile approaches and explain when each approach may be appropriate."
+    },
+    {
+        "id": "P09",
+        "category": "Academic",
+        "prompt": "Analyze the importance of data privacy in digital systems. Explain personal data, privacy risks, data breaches, user consent, organizational responsibilities, and privacy-preserving technologies. Discuss major challenges and possible solutions."
+    },
+    {
+        "id": "P10",
+        "category": "AI",
+        "prompt": "Explain the concept of large language models. Describe tokenization, training data, transformer architectures, attention mechanisms, inference, and common limitations. Discuss how prompt design can affect the quality of generated responses."
+    }
+]

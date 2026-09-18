@@ -1,0 +1,1 @@
+Describe the challenges associated with reducing prompt length while preserving semantic information, task instructions, contextual relationships, and downstream response quality. Analyze token-level compression with semantic or graph-based compression approaches. Present the answer in a structured academic format using clear headings and concise explanations.
